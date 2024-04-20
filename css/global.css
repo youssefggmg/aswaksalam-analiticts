@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+* {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal ;
+}
+
+body {
+    /* font-family: Arial, sans-serif; not the font we need */
+    /* background-color: #ffffff; no use for this line  */
+    /* margin: 150px; */ /* this line only me ke the page akt weard*/
+    padding: 0;
+    /* display: flex; this line is making the hole bage not working  */
+    /* align-items: center;
+    flex-direction: column; */
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #dbdbdb;
+    padding: 10px 20px;
+    /* width: 90%; no need for this line  */
+    height: 9%;
+    /* position: fixed; not working */
+    top: 13px;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 50px;
+    color: black;
+    font-size: bold;
+}
+
+.deconn {
+    text-decoration: none;
+}
+
+@media (max-width : 991px) {
+    nav .sidebar {
+        background-color: #b8b2b2;
+    }
+    .fixed-top {
+        height: 6em !important;
+    }
+
+}
+
+a.nav-link.active {
+    font-weight: bold;
+}
+
+.nav-item a:hover {
+    color: blue !important;
+}
+
+
+
+.fa-right-from-bracket {
+    color: blue;
+    padding: 10px;
+    cursor: pointer;
+    margin-right: 44px;
+}
+
+.fa-right-from-bracket:hover {
+    color: red;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #b8b2b2;
+    color: #000000eb;
+    font-weight: bold;
+    padding: 10px 20px;
+    width: 100%;
+    height: 10%;
+    /* position: fixed; */
+    bottom: 0;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+}
+
+footer p {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.bg-img {
+    background-color: white;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+}
+
+img.navbar-brand {
+    margin-left: 10px;
+}
+
+.fixed-top {
+    position: fixed;
+    top: 11px !important;
+    right: 0;
+    left: 0;
+    /* z-index: 1030; */
+    border-radius: 50px;
+    height: 5em;
+}

@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal ;
+}
+html {
+    height: 100%;
+}
+body{
+  height: 100%;  
+    
+}
+main{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.formMagazin{
+    width: 400px;
+    height: 450px;
+    background-color:#D9D9D9;
+    border-radius: 10px;
+}
+.containerForm{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+   
+}
+.allInput{
+    height: 300px;
+    display: flex;
+    width: 80%;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+/* youssef have added some lines in here */
+input,select{
+    width: 20em;
+    height: 30px;
+    margin-top: 10px;
+    border-radius: 25px;
+    border: none;
+    padding-inline: 10px;
+}
+.btn{
+    width: 150px;
+    height: 30px;
+    border: none;
+    border-bottom-right-radius: 25px;
+    border-top-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    border-top-left-radius: 25px;
+    background-color: blue;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 4px 8px;
+    letter-spacing: 1px;
+}
+
+
+
+
+
+
+
+/* after this line youssef have added some changes */
+label{
+    display: block;
+}
+select{
+    width: 21.4em;
+}

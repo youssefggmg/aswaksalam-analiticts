@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+* {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal ;
+    margin: 0;
+    padding: 0;
+    font-family: "Nunito Sans", sans-serif;
+}
+
+h1{  font-weight: 700; font-size: 24px; } 
+h2{  font-weight: 500; font-size: 20px;} 
+h3{ font-weight: 500; font-size: 16px; }
+.badge{  font-weight: 600;  font-size: 12px; }
+p{  font-weight: 400; font-size: 14px; line-height: 1.6; }
+header{ display: flex; justify-content: center; }
+body{
+  overflow-x: hidden;
+}
+.section{
+display: flex; 
+justify-content: center;
+margin-top: 10em;
+margin-bottom: 10em;
+}
+.affichage{
+display: flex; 
+flex-direction: column; width: 65%;
+  height: 570px;
+background-color: #95B6D9;   border: 3px solid #504DC1;
+}
+.barre{
+    display: flex;
+    align-items: center;  justify-content: space-between;
+    background-color: #2F67A3;
+    height: 45px; margin-bottom: 40px;
+}
+
+#id-h2 {   color: white; font-weight: 500; font-size: 20px;
+    flex-grow: 1; /* Pour agrandir le conteneur flex */
+    text-align: center; 
+}
+
+.container-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#container1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    width: 80%;
+  }
+   #container1 h1 {
+margin: 20px 0;
+  }
+#container2 {
+    width: 80%;
+    height:200px;
+    margin: 20px auto;
+  }
+  
+  #tableau {
+    width: 100%;
+    border-collapse: collapse; /*Fusionner les borders en un seul pour creer un aspect compact */
+  }
+  #tableau-container {
+    max-height: 310px; /* Hauteur maximale pour le conteneur */
+    overflow-y: auto; /* Défilement vertical automatique si nécessaire */
+  }
+  th, td {
+    border-bottom: 1px solid #2F67A3;
+    text-align: center;
+    padding: 8px;
+    width: 10%; font-weight: 500; font-size: 16px;
+}
+th{
+  color: white;
+    background-color: #2F67A3;
+}
+  #ajouterLigne {
+    position: absolute;
+    right: 0;
+    margin-top: 30px;
+   background-color: #4CAF50;
+   height: 40px;    width: 40px;
+   border-radius: 50%;
+   font-size: 1.6em; cursor: pointer;
+   color: white;  border: none; outline: none;
+  }
+
+  .container-btn{
+    position: relative;
+    width: 100%;
+  }
+  
+  /* ----------------------------------------------------- CSS Modal Modifier  et ajouter meme style------------------------------------------*/
+  .displayModifier{
+    display: none; 
+    position: fixed;
+    top: 50%;
+    left: 50%;   
+     transform: translate(-50%, -50%);  
+  }
+
+  .displayAjouter{
+    display: none; 
+    position: fixed;
+    top: 50%;
+    left: 50%;   
+     transform: translate(-50%, -50%);  
+  }
+
+
+
+  .affichageM{
+    display: flex;
+    flex-direction: column;
+    width: 480px;   
+    background-color: #95B6D9;   border: 3px solid #2F67A3;
+    }
+    .barreM{
+        display: flex;
+        align-items: center;  justify-content: space-between;
+        background-color: #2F67A3;
+        margin-bottom: 20px;
+    }
+    
+    .barreM h2 {
+        flex-grow: 1; /* Pour agrandir le conteneur flex */
+        text-align: center; /* Pour poser le texte au debut */
+        color: white;
+     }
+    
+    .btn-exitM{
+        display: flex; justify-content: center; align-items: center;
+        background-color: #CE0033;
+        color: white; cursor: pointer;
+        border: none;  height: 45px; width: 45px;
+    }
+    
+            form{
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+    background-color: #95B6D9;
+    margin-bottom: 20px;
+            }
+            form div{
+            width:320px;
+            margin: 15px auto;
+            }
+    form input{
+        width: 200px; height: 25px;
+        background-color: #2F67A3;  border: none;
+        color: white; font-weight: 400; font-size: 14px; 
+         padding: 2.5px; 
+    }
+     #ajouter_Magasin, #Magasin {
+      color: #CEC3C3;
+      font-weight: 400; font-size: 14px; 
+    } 
+          
+  
+            .div-inline{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;  
+            } 
+            .div-inline label{ font-weight: 500; font-size: 16px; }
+       
+    
+     .btn-txt{ font-weight: 600;
+                font-size: 16px;
+                width: 205px; /* On ajoute 5px à cause du padding pour textarea et input pour rester dans la symetrie */
+                    height: 40px;
+                    color: #fff;
+                    background: #CE0033;
+                    border: none;
+                    cursor: pointer; }
+    .btn-flex{
+     display: flex;
+     justify-content: end;}
+  
+/* ************************************ Blur ******************************************** */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Couleur de fond semi-transparente */
+  backdrop-filter: blur(5px); /* Ajout du flou */
+  z-index: 0; /* Assure que cet élément est au-dessus de tous les autres contenus */
+  display: none;
+}
+
+
+/* ******************************* Element dashboard * ********************************** */
+
+.view,.modifier,.delete{
+  cursor: pointer;
+}
+

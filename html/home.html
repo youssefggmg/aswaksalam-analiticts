@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- local style -->
+    <link rel="stylesheet" href="../css/global.css">
+    <!-- font awsome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <div class="bg-img"><img class="navbar-brand" src="../img/untitled-1_241-removebg-preview.png" width="60px">
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                aria-controls="offcanvasNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="sidebar offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header border-bottom">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body p-1">
+                    <ul class="navbar-nav justify-content-center  align-items-start flex-grow-1 pe-3">
+                        <li class="nav-item mx-2">
+                            <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link active" aria-current="page" href="#">Magasins</a>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link active" aria-current="page" href="#">Ajouter Magasin</a>
+                        </li>
+
+                    </ul>
+                    <div id="logout" class="d-flex align-items-center " role="discount">
+                        <a href="#" class="text-danger deconn ">Déconnextion<i class="fa-solid fa-right-from-bracket"
+                                style="color: #e80202;"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- second nav bar start by yousse -->
+    <section class="second-nav">
+        <h4 class="active title">CA</h4>
+        <h4 class="title" >Effectifs</h4>
+        <h4 class="title" >Surface</h4>
+    </section>
+    <!-- second nav bar end by yousse -->
+    <!-- main start -->
+    <main>
+        <article class="chart-artcle">
+            <div>
+                <h6>Mode</h6>
+                <h2>4764000 DH</h2>
+                <p>le chiffres d'affaire réalisé par le plus grand <br>
+                    nombre de magasins est 4764000 dhs,
+                </p>
+            </div>
+            <div>
+                <h6>Moyenne arithmethique pondérée</h6>
+                <h2>4655000 DH</h2>
+                <p>Le Chiffres d'affaires moyen de tous <br> 
+                    les magasins
+                </p>
+            </div>
+        </article>
+        <div class="the-chart"></div>
+    </main>
+    <!-- main end -->
+    <!-- last tow carts  start -->
+    <section class="section">
+        <div>
+            <h6>Mode</h6>
+            <h2>4764000 DH</h2>
+            <p>le chiffres d'affaire réalisé par le plus grand <br>
+                nombre de magasins est 4764000 dhs,
+            </p>
+        </div>
+        <div class="large">
+            <h6>Ecart-type et coefficient de variation</h6>
+            <h2>4655000 DH</h2>
+            <p>l'écart-type montre que les CA des magasins s'écartent en 
+                moyenne de 610000dhs,et le coefficient de variation est de 0,131 
+                ce qui signifie que l'écart type represente 13,1% de la moyenne 
+                , donc la plupart des CA sont  centrés autour du CA moyen
+            </p>
+        </div>
+    </section>
+
+
+
+    <!-- footer -->
+    <footer>
+        <p>© 2024 All rights reserved. Designed by RHY^2</p>
+    </footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+        integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+        integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magasin dahsboard</title>
+    <!-- local style -->
+    <link rel="stylesheet" href="../css/dash.css">
+    
+    <link rel="stylesheet" href="../css/global.css">
+    <!-- font awsom cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- bootsarap cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+</head>
+<body>
+    <!-- nave bar start by reda -->
+    
+    <nav class="navbar navbar-expand-lg fixed-top">
+      <div class="container">
+          <div class="bg-img"><img class="navbar-brand" src="../img/untitled-1_241-removebg-preview.png" width="60px">
+          </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+              aria-controls="offcanvasNavbar">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="sidebar offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+              aria-labelledby="offcanvasNavbarLabel">
+              <div class="offcanvas-header border-bottom">
+                  <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              </div>
+              <div class="offcanvas-body p-1">
+                  <ul class="navbar-nav justify-content-center  align-items-start flex-grow-1 pe-3">
+                      <li class="nav-item mx-2">
+                          <a class="nav-link " aria-current="page" href="dashborde.html">Dashboard</a>
+                      </li>
+                      <li class="nav-item mx-2">
+                          <a class="nav-link " aria-current="page" href="./magazins.html">Magasins</a>
+                      </li>
+                      <li class="nav-item mx-2">
+                          <a class="nav-link " aria-current="page" href="./magazinForm.html">Ajouter Magasin</a>
+                      </li>
+                  </ul>
+                  <div id="logout" class="d-flex align-items-center " role="discount">
+                      <a href="#" class="text-danger deconn " id="loge-out">Déconnextion<i class="fa-solid fa-right-from-bracket"
+                              style="color: #e80202;"></i></a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </nav>
+  <!-- nave bar end by reda -->
+    
+    <section>
+<div class="section">
+  <div class="affichage">
+    <div class="barre">
+        <h2 id="id-h2">Magasin dahsboard</h2>
+        <button class="btn-exitM"><img src="../img/Exit.png" alt="Exit"></button>
+
+    </div>
+    <div class="container-body">
+        <div id="container1">
+            <h2>Location: <span id="myName">Hamza</span></h2>
+     </div>
+
+     <div id="container2">
+        <div id="tableau-container">
+        <table id="tableau">
+          <thead>
+            <tr>
+              <th>Année</th>
+              <th>CA</th>
+              <th>Effectifs</th>
+              <th>Surface</th>
+              <th>Modifier</th>
+              <th>Supprimer</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Lignes de données ici -->
+          </tbody>
+        </table>
+    </div>
+    <div class="container-btn">
+        <button id="ajouterLigne">+</button>
+
+    </div> 
+      </div>
+    </div>
+</div>
+</section>
+<footer>
+  <p>© 2024 All rights reserved. Designed by RHY^2</p>
+</footer>
+
+<div class="modal-overlay"> 
+    <!-- Modal de modifier -->
+    <div class="displayModifier">
+      <div class="affichageM">
+        <div class="barreM">
+            <h2>Modifier</h2>
+            <button class="btn-exitM"><img src="../img/Exit.png" alt="Exit"></button>
+          </div>
+    
+            <form id="form-modifier" action="">
+                <div class="div-inline">
+                    <label for=" titre">Magasin</label>
+                    <input type="text" value="" id="Magasin" name="Magasin" readonly>
+                </div>
+                <div class="div-inline">
+                    <label for="brief">Année</label>
+                    <input type="text" id="Annee" name="Annee">
+                </div>
+                <div class="div-inline">
+                  <label for="brief">CA (dhs)</label>
+                  <input type="text" id="CA" name="CA"  >
+              </div>
+              <div class="div-inline">
+                <label for="brief">Effectifs</label>
+                <input type="text" id="Effectifs" name="Effectifs" >
+            </div>
+            <div class="div-inline">
+              <label for="brief">Surface (m²)</label>
+              <input type="text" id="Surface" name="Surface"  >
+          </div>
+                <div class="btn-flex">
+                    <input class ="btn-txt" type="submit" value="Modifier">
+                </div>
+            </form>
+    </div>
+    </div>
+
+    <div class="displayAjouter">
+      <div class="affichageM">
+        <div class="barreM">
+            <h2>Ajouter</h2>
+            <button class="btn-exitM"><img src="../img/Exit.png" alt="Exit"></button>
+          </div>
+    
+          <form id="form-ajouter" action="">
+            <div class="div-inline">
+                <label for="ajouter_titre">Magasin</label>
+                <input type="text" value="" id="ajouter_Magasin" name="Magasin" readonly>
+            </div>
+            <div class="div-inline">
+                <label for="ajouter_brief">Année</label>
+                <input type="text" id="ajouter_Annee" name="Annee" >
+            </div>
+            <div class="div-inline">
+                <label for="ajouter_brief">CA (dhs)</label>
+                <input type="text" id="ajouter_CA" name="CA">
+            </div>
+            <div class="div-inline">
+                <label for="ajouter_brief">Effectifs</label>
+                <input type="text" id="ajouter_Effectifs" name="Effectifs" >
+            </div>
+            <div class="div-inline">
+                <label for="ajouter_brief">Surface (m²)</label>
+                <input type="text" id="ajouter_Surface" name="Surface"  >
+            </div>
+            <div class="btn-flex">
+                <input class="btn-txt" type="submit" value="Ajouter">
+            </div>
+        </form>
+        
+    </div>
+    </div>
+    </div>
+
+<script src ="../JS/dash.js"></script>
+</body>
+</html>
