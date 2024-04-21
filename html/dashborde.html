@@ -12,14 +12,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <!-- chart js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <title>aswakassalm dashbord</title>
+    
+    <title>Dashboard</title>
 </head>
 <body>
-    <!-- nave bar start by reda -->
-    
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
-            <div class="bg-img"><img class="navbar-brand" src="../img/untitled-1_241-removebg-preview.png" width="60px">
+            <div class="bg-img">
+                <img class="navbar-brand" src="../img/untitled-1_241-removebg-preview.png" width="60px">
             </div>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
                 aria-controls="offcanvasNavbar">
@@ -34,13 +34,13 @@
                 <div class="offcanvas-body p-1">
                     <ul class="navbar-nav justify-content-center  align-items-start flex-grow-1 pe-3">
                         <li class="nav-item mx-2">
-                            <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
+                            <a class="nav-link " aria-current="page" href="./dashborde.html">Dashboard</a>
                         </li>
                         <li class="nav-item mx-2">
-                            <a class="nav-link " aria-current="page" href="./magazins.html">Magasins</a>
+                            <a class="nav-link " aria-current="page" href="magazins.html">Magasins</a>
                         </li>
                         <li class="nav-item mx-2">
-                            <a class="nav-link " aria-current="page" href="./magazinForm.html">Ajouter Magasin</a>
+                            <a class="nav-link active" aria-current="page" href="#">Ajouter Magasin</a>
                         </li>
 
                     </ul>
@@ -52,80 +52,89 @@
             </div>
         </div>
     </nav>
-    <!-- nave bar end by reda -->
-    <!-- second nav bar start by yousse -->
-    <section class="second-nav">
-        <h4 class="active title">CA</h4>
-        <h4 class="title" >Effectifs</h4>
-        <h4 class="title" >Surface</h4>
-        <select class="selectDate" >
-            
-        </select>
-    </section>
-    <!-- second nav bar end by yousse -->
-    <!-- main start -->
-    <main>
-        <article class="chart-artcle">
-            <div>
-                <h6>Mode</h6>
-                <h2>4764000 DH</h2>
-                <p> réalisé par le plus grand <br>
-                    nombre de magasins est 4764000 dhs,
+    <main class="container">
+       
+        <section class="second-nav  d-flex flex-row justify-content-center mb-5">
+            <h4 class="active me-5 title">CA</h4>
+            <h4 class="title me-5"  >Effectifs</h4>
+            <h4 class="title me-5" >Surface</h4>
+        </section>
+    
+      <div class="row d-flex flex-column align-items-center  d-lg-flex flex-lg-row justify-content-lg-around">
+        <div class="col-lg-4 col-10" >
+            <div class="cards pt-3" >
+               <div class="inCard ms-4">
+                   <p>Mode</p>
+                   <h2 class="mode">Rien</h2>
+                   <p>le mode de tous les magasins existent c'est: <br>
+                   <span class="mode">Pas de valeur pour le moment</span>
                 </p>
+               </div>
             </div>
-            <div>
-                <h6>Moyenne arithmethique pondérée</h6>
-                <h2>4655000 DH</h2>
-                <p>Le Chiffres d'affaires moyen de tous <br> 
-                    les magasins
-                </p>
+            <div class="cards mt-5 pt-3" >
+                <div class="inCard ms-4">
+                    <h6>Moyenne arithmethique pondérée</h6>
+                    <h2 class="moyenne">Rien</h2>
+                    <p>Le moyen de tous les magasins</p>
+                </div>
             </div>
-        </article>
-        <div class="the-chart">
-            <canvas id="myChart" style="max-width: 400px; max-height: 400px;"></canvas>
+            <div class="cards mt-5 pt-3" >
+                <div class="inCard ms-4">
+                   <h6>Mediane</h6>
+                  <h2 class="mediane">Rien</h2>
+                  <p>50% des magasins sont inférieur à  <br>
+                  <span class="mediane">la valeur qui sera affiche</span> et par conséquent 50% <br>
+                d'entre ils sont supérieur <br>
+                à cette resultat       </p>
+                </div>
+            </div>
         </div>
+
+        <div class="col-lg-6 col-10  d-flex flex-lg-column flex-column-reverse">
+            <div class="cardChart p-3 my-4" >
+                <div class="inCard  d-flex flex-column justify-content-center align-items-center" >
+                    <div class="d-flex d-flex flex-column "  >
+                        <p class=" m-0 " >Filter By date</p>
+                        <select class="selectDate"></select>
+                    </div>
+                <canvas id="myChart" style="max-width: 80%; max-height: 500px;"></canvas>
+                </div>
+             </div>
+             <div class="cards mt-5 pt-3" >
+                 <div class="inCard">
+                    <div class="inCard ms-4">
+                        <h6>Ecart-type et coefficient de variation</h6>
+                        <h2 class="ecart">Rien</h2>
+                        <p>l'écart-type montre que les magasins s'écartent en 
+                            moyenne de <span class="ecart">la valeur qui sera affiche</span>,et le coefficient de variation est de <span class="CV">une valeur sera afficher </span>
+                        </p>
+                    </div>
+ 
+                 </div>
+             </div>
+        </div>
+      </div>
     </main>
-    <!-- main end -->
-    <!-- last tow carts  start -->
-    <section class="section">
-        <div>
-            <h6>Mode</h6>
-            <h2>4764000 DH</h2>
-            <p>le chiffres d'affaire réalisé par le plus grand <br>
-                nombre de magasins est 4764000 dhs,
-            </p>
-        </div>
-        <div class="large">
-            <h6>Ecart-type et coefficient de variation</h6>
-            <h2>4655000 DH</h2>
-            <p>l'écart-type montre que les CA des magasins s'écartent en 
-                moyenne de 610000dhs,et le coefficient de variation est de 0,131 
-                ce qui signifie que l'écart type represente 13,1% de la moyenne 
-                , donc la plupart des CA sont  centrés autour du CA moyen
-            </p>
-        </div>
-    </section>
-    <!-- last tow carts  end -->
-    <!-- footer by reda -->
     <footer>
-        <p>© 2024 All rights reserved. Designed by RHY^2</p>
+        <h3>Copyright 2024 © AswakSalam.com - Tous droits réservés.</h3>
     </footer>
 
+
     <!-- bootstrap js -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
-    <!-- local js -->
-    <script src="../js/dashbord.js"></script>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
-        integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
-        integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
-        crossorigin="anonymous"></script>
-        <script src="../js/loge-out.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+<!-- local js -->
+<script src="../JS/dashbord.js"></script>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+    integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+    integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+    crossorigin="anonymous"></script>
+    <script src="../js/loge-out.js"></script>
 </body>
 </html>
