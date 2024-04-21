@@ -1,50 +1,58 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
 
-*{
+* {
     padding: 0;
     margin: 0;
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
     font-weight: 700;
-    font-style: normal ;
+    font-style: normal;
 }
+
 html {
     height: 100%;
 }
-body{
-  height: 100%;  
-    
+
+body {
+    height: 100%;
+
 }
-main{
+
+main {
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.formMagazin{
+
+.formMagazin {
     width: 400px;
     height: 450px;
-    background-color:#D9D9D9;
+    background-color: #D9D9D9;
     border-radius: 10px;
 }
-.containerForm{
+
+.containerForm {
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-   
+
 }
-.allInput{
+
+.allInput {
     height: 300px;
     display: flex;
     width: 80%;
     flex-direction: column;
     justify-content: space-between;
-    
+
 }
+
 /* youssef have added some lines in here */
-input,select{
+input,
+select {
     width: 20em;
     height: 30px;
     margin-top: 10px;
@@ -52,7 +60,8 @@ input,select{
     border: none;
     padding-inline: 10px;
 }
-.btn{
+
+.btn {
     width: 150px;
     height: 30px;
     border: none;
@@ -69,15 +78,13 @@ input,select{
 }
 
 
-
-
-
-
-
 /* after this line youssef have added some changes */
-label{
+label {
     display: block;
 }
-select{
+
+select {
     width: 21.4em;
 }
+
+/* last update */
