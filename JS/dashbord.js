@@ -8,6 +8,21 @@ mettreAJourSelectDate(listeAnnee);
 let year=(Number)(document.querySelector('.selectDate').value);
 let listeMagasinFilter=filter_magasin_par_annee(listeMagasin,year);
 createHistogram(listeMagasin, "CA", listeMagasinFilter);
+let mode=calculer_mode_moyenne_mediane(listeMagasinFilter,"CA","mode");
+let moyenne=calculer_mode_moyenne_mediane(listeMagasinFilter,"CA","moyenne");
+let mediane=calculer_mode_moyenne_mediane(listeMagasinFilter,"CA","mediane");
+let ecartType=ecart_type(listeMagasinFilter,"CA", moyenne);
+let coeff= CV(ecartType,moyenne);
+const modeHtml=document.querySelectorAll(".mode");
+modeHtml.forEach((mo)=>mo.textContent=mode);
+const moyenneHtml=document.querySelector(".moyenne");
+moyenneHtml.textContent=moyenne;
+const medianeHtml=document.querySelectorAll(".mediane");
+medianeHtml.forEach((me)=>me.textContent=mediane);
+const ecartHtml=document.querySelectorAll(".ecart");
+ecartHtml.forEach((e)=>e.textContent=ecartType);
+const CVHtml=document.querySelector(".CV");
+CVHtml.textContent=coeff;
 
 // Ajoutez un écouteur d'événements à l'élément <select> avec la classe "selectDate"
 
@@ -16,6 +31,17 @@ document.querySelector('.selectDate').addEventListener('change', function() {
     year = parseInt(this.value,10); // Utilisez parseInt pour convertir la valeur en nombre entier
     listeMagasinFilter = filter_magasin_par_annee(JSON.parse(localStorage.getItem("magazins")), year);
      createHistogram(JSON.parse(localStorage.getItem("magazins")),  localStorage.getItem("key"), listeMagasinFilter);
+      mode=calculer_mode_moyenne_mediane(listeMagasinFilter,localStorage.getItem("key"),"mode");
+      moyenne=calculer_mode_moyenne_mediane(listeMagasinFilter,localStorage.getItem("key"),"moyenne");
+      mediane=calculer_mode_moyenne_mediane(listeMagasinFilter,localStorage.getItem("key"),"mediane");
+      ecartType=ecart_type(listeMagasinFilter,localStorage.getItem("key"), moyenne);
+      coeff= CV(ecartType,moyenne);
+      modeHtml.forEach((mo)=>mo.textContent=mode);
+      moyenneHtml.textContent=moyenne;
+      medianeHtml.forEach((me)=>me.textContent=mediane);
+      ecartHtml.forEach((e)=>e.textContent=ecartType);
+      CVHtml.textContent=coeff;
+
     });
 
 //select the elements 
@@ -32,6 +58,17 @@ title.forEach((e) => {
          if(choix == "CA" || choix == "Effectifs" || choix == "Surface"){
           localStorage.setItem("key",choix);
           createHistogram(listeMagasin,choix,listeMagasinFilter);
+          mode=calculer_mode_moyenne_mediane(listeMagasinFilter,choix,"mode");
+          modeHtml.forEach((mo)=>mo.textContent=mode);
+          moyenne=calculer_mode_moyenne_mediane(listeMagasinFilter,choix,"moyenne");
+          moyenneHtml.textContent=moyenne;
+          mediane=calculer_mode_moyenne_mediane(listeMagasinFilter,choix,"mediane");
+          medianeHtml.forEach((me)=>me.textContent=mediane);
+          ecartType=ecart_type(listeMagasinFilter,choix, moyenne);
+          coeff= CV(ecartType,moyenne);
+          ecartHtml.forEach((e)=>e.textContent=ecartType);
+          CVHtml.textContent=coeff;
+
         }
     });
 });
@@ -42,7 +79,6 @@ title.forEach((e) => {
 function filter_magasin_par_annee(listeMagasin,year){
 // Creation de liste magasins filtrer par l'année
   let listeMagasinFilter=[];
-
   for(let j=0;j<listeMagasin.length;j++){
     if(listeMagasin[j].listeData){
       for(let i=0;i<listeMagasin[j].listeData.length;i++){
@@ -57,7 +93,7 @@ function filter_magasin_par_annee(listeMagasin,year){
       }
     }
   }
-  
+  // ListeMagasinFilter contient les magasins avec les donnees selon la date filtrer
   return listeMagasinFilter;
 }
 
@@ -79,9 +115,9 @@ function createHistogram(listeMagasin,choix,listeMagasinFilter){
    const Classes=calculer_classes(listeMagasinFilter,choix);
     // Compter le nombre de magasins dans chaque classe 
     calculer_nbr_magasins(listeMagasinFilter,choix,Classes);
-  const labels = Classes.map((Class) => [`${Class.min},${Class.max}[]`]);
+  const labels = Classes.map((Class) => `[ ${Class.min},${Class.max}[`);
   const counts = Classes.map(Class => Class.count);
-  afficher_graph(labels,counts);
+  afficher_graph(labels,counts,choix);
 }
 
    // Calculer les classes d'une maniere dynamiques
@@ -99,7 +135,6 @@ if(choix=="CA"){
   // Stocker juste les valeurs de la surface des magasins
  Values = listeMagasinFilter.map(mag => mag.listeData.surface);
 }
-
 // Les fonctions Math.min et Math.max prend des argurments et pas liste donc on doit utiliser le spread operator 
 // ... devant caValues, vous dites à JavaScript de traiter chaque élément de caValues comme un argument distinct
 const Min = Math.min(...Values);
@@ -116,21 +151,19 @@ const classWidth = (Max - Min) / numClasses;
   return Classes;
 }
 
-function afficher_graph(labels,counts){
+function afficher_graph(labels,counts,choix){
   
 const ctx = document.getElementById('myChart');
 let gra = Chart.getChart("myChart")
-         console.log(gra)
           if(gra){
             gra.destroy()
           }
-         
         new Chart(ctx, {
          type: 'bar',
          data: {
            labels: labels,
            datasets: [{
-                label: false,
+                label: choix,
                 data:counts,
                 borderWidth: 1,
                 minBarLength: 1,
@@ -141,9 +174,7 @@ let gra = Chart.getChart("myChart")
             scales: {
                 y: {
                 beginAtZero: true,
-                
                 }
-                
             }
         }
 });
@@ -202,5 +233,94 @@ magasin.listeData.forEach(function(data){
 })  }
 });
 listeAnnee = Array.from(listeAnnee);
-return listeAnnee;
+listeAnnee.sort((a,b)=>b-a);
+return listeAnnee;
+}
+
+function calculer_mode_moyenne_mediane(listeMagasinFilter,choix,methode) {
+let valeurs=[]; let sum=0;
+listeMagasinFilter.forEach((magasin)=>{
+if(choix=="CA"){valeurs.push(magasin.listeData.CA); }
+else if(choix=="Effectifs"){ valeurs.push(magasin.listeData.effectifs); }
+else if(choix=="Surface"){ valeurs.push(magasin.listeData.surface); }
+});
+// Je fais le trie pour trouver la mediane apres
+valeurs.sort((a,b)=>a-b);
+const size=valeurs.length;
+console.log(size);
+// frequences est un objet qui contient des proprietes qui sont tous les valeurs CA ou Surface ou effectifs chaque propriete sera defini par le nbr de repetition de cette valeur
+let frequences={};
+valeurs.forEach((valeur)=>{
+  // Cette partie pour calculer apres la moyenne 
+  sum=(Number)(valeur)+sum;
+  console.log("sum",sum);
+// J'ai utiliser notation crochet frequences[valeur] car la propriete [valeur] de l'objet frequence est dynamique c'est variable (N'est pas une propriete connue au depart)
+if(frequences[valeur]){
+    frequences[valeur]=frequences[valeur]+1;
+  }
+  else{
+    frequences[valeur]=1;
+  }
+});
+// (Set) pour supprimer les valeurs en double et (...)spread operator pour decompose les elements de l'ensemble en argurment et [...]  les arguments distincts sont ensuite convertis en une nouvelle liste
+let valeursUniques = [...new Set(valeurs)];   let maxFrequence=0;    
+valeursUniques.forEach((valeurUnique)=>{
+  if(frequences[valeurUnique]>maxFrequence){
+    maxFrequence=frequences[valeurUnique];
+  }
+});
+let modes=[];
+valeursUniques.forEach((valeurUnique)=>{
+  if(frequences[valeurUnique]==maxFrequence){
+modes.push(valeurUnique);
+  }
+});
+if(methode=="moyenne"){
+  return (sum/size).toFixed(0);
+}
+else if(methode=="mode") {
+  return modes;
+}
+else if(methode="mediane"){
+  if (size % 2 === 1) {
+    // Si le nombre total de valeurs est impair, la médiane est la valeur au milieu de la liste triée
+    return valeurs[Math.floor(size / 2)];
+} else {
+    // Si le nombre total de valeurs est pair, la médiane est la moyenne des deux valeurs au milieu de la liste triée
+    const milieuGauche =(Number)(valeurs[(size / 2) - 1]);
+    const milieuDroit = (Number)(valeurs[size / 2]);
+    return (milieuGauche + milieuDroit) / 2;
+}
+}
+}
+
+function ecart_type(listeMagasinFilter, choix, moyenne) {
+  const size = listeMagasinFilter.length;
+  let sommeCarresEcarts = 0;
+  
+  // Calculez les carrés des écarts par rapport à la moyenne
+  listeMagasinFilter.forEach((magasin) => {
+      let valeur;
+      if (choix === "CA") {
+          valeur = magasin.listeData.CA;
+      } else if (choix === "Surface") {
+          valeur = magasin.listeData.surface;
+      } else if (choix === "Effectifs") {
+          valeur = magasin.listeData.effectifs;
+      }
+
+      // Calculez l'écart et son carré
+      const ecart = valeur - moyenne;
+      sommeCarresEcarts += ecart * ecart;
+  });
+  
+  // Calculez la variance
+  const variance = sommeCarresEcarts / size;
+  
+  // Retournez l'écart-type, qui est la racine carrée de la variance
+  return (Math.sqrt(variance)).toFixed(0);
+}
+
+function CV(ecartType,moyenne){
+return (ecartType/moyenne).toFixed(2);
 }
