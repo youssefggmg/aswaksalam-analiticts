@@ -74,6 +74,10 @@ let toDaya = new Date()
 
 valid.addEventListener("click" , valideMagazin)
 function valideMagazin(){
+  if(nameOneMagazin == ""){
+    alert("name is required")
+    return ;
+    }
   if(dateCreation == ""){
     alert("date creation is required")
     return ;
