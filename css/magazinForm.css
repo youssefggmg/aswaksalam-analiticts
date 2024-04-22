@@ -27,9 +27,11 @@ main {
 
 .formMagazin {
     width: 400px;
-    height: 450px;
+    height: 487px;
     background-color: #D9D9D9;
     border-radius: 10px;
+    margin-top: 79px;
+    padding: 14px;
 }
 
 .containerForm {
@@ -55,26 +57,41 @@ input,
 select {
     width: 20em;
     height: 30px;
-    margin-top: 10px;
+    /* margin-top: 10px; */
     border-radius: 25px;
     border: none;
     padding-inline: 10px;
 }
 
-.btn {
-    width: 150px;
-    height: 30px;
+select#Ville,
+select#quartier {
+    width: 320px !important;
+}
+
+select#Ville {
+    position: absolute !important;
+    margin-top: -12px !important;
+}
+
+div#ville {
+    margin-top: -15px;
+}
+
+.addButton {
+    width: 131px;
+    height: 37px;
     border: none;
-    border-bottom-right-radius: 25px;
-    border-top-right-radius: 25px;
-    border-bottom-left-radius: 25px;
-    border-top-left-radius: 25px;
     background-color: blue;
     color: white;
     font-weight: bold;
     font-size: 18px;
-    padding: 4px 8px;
     letter-spacing: 1px;
+    padding: 3px;
+    border-radius: 50px;
+}
+
+.addButton:hover {
+    background-color: #1E90FF;
 }
 
 
@@ -82,9 +99,3 @@ select {
 label {
     display: block;
 }
-
-select {
-    width: 21.4em;
-}
-
-/* last update */
