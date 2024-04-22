@@ -2,6 +2,14 @@
     margin: 0;
     padding: 0;
 }
+html {
+    height: 100%;
+}
+body{
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
 hr{
     width: 85%;
     border: .2em solid rgb(11, 19, 126) !important;
@@ -40,4 +48,22 @@ main{
 }
 .space{
     margin-top: 7em;
+}
+
+footer{
+    box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+    margin-top: auto;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #dbdbdb;
+}
+
+@media (max-width:600px) {
+    
+   footer h3 {
+    font-size: 14px;
+   }
+   
 }
