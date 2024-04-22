@@ -99,3 +99,19 @@ div#ville {
 label {
     display: block;
 }
+
+label.spaceNom,
+label.spaceQuartier,
+label.spaceDate {
+    margin-bottom: 10px !important;
+}
+
+label.spaceQuartier {
+    margin-top: 21px !important;
+
+}
+
+label.spaceVille {
+    margin-top: 17px !important;
+
+}

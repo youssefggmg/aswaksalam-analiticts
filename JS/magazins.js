@@ -96,7 +96,7 @@ let getCity;
 function convertPage (){
     pageConvert =!pageConvert
     if(pageConvert== true){
-      tab.innerHTML=`<i class="fa-solid fa-table-list" fa-2xl></i>`
+      tab.innerHTML=`<i class="fa-solid fa-table-list fa-2xl" ></i>`
       
       let getCityVert = localStorage.getItem("getCity")
     

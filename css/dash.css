@@ -6,17 +6,26 @@ h3{ font-weight: 500; font-size: 16px; }
 .badge{  font-weight: 600;  font-size: 12px; }
 p{  font-weight: 400; font-size: 14px; line-height: 1.6; }
 header{ display: flex; justify-content: center; }
+
+html {
+  height: 100%;
+}
 body{
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
   overflow-x: hidden;
 }
 .section{
 display: flex; justify-content: center;
+/* added by youssef */
+margin: 9em 0 2em 0;
 }
 .affichage{
 display: flex; 
 flex-direction: column; width: 65%;
   height: 570px;
-background-color: #95B6D9;   border: 3px solid #504DC1;
+background-color: #dbdbdb;   border: 3px solid #504DC1;
 }
 .barre{
     display: flex;

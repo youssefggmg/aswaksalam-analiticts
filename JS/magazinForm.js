@@ -74,8 +74,12 @@ let toDaya = new Date()
 
 valid.addEventListener("click" , valideMagazin)
 function valideMagazin(){
+  if(dateCreation == ""){
+    alert("date creation is required")
+    return ;
+    }
    
-  console.log(quartierMagazin)
+  // console.log(quartierMagazin)
     let magazinObject = {
       name :nameOneMagazin,
       ville : villeMagazin,
@@ -98,7 +102,7 @@ function valideMagazin(){
     }else{
         magazinArray.push(magazinObject)
     }
-    console.log(magazinArray)
+    // console.log(magazinArray)
     localStorage.setItem("magazins", JSON.stringify(magazinArray))
     window.location.href = "magazins.html"
 }

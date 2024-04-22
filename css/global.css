@@ -68,20 +68,14 @@ a.nav-link.active {
     color: red;
 }
 
-footer {
+footer{
+    box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+    margin-top: auto;
+    height: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #b8b2b2;
-    color: #000000eb;
-    font-weight: bold;
-    padding: 10px 20px;
-    width: 100%;
-    height: 10%;
-    position: fixed;
-    bottom: 0;
-    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
-    margin-top: 20px;
+    background-color: #dbdbdb;
 }
 
 footer p {

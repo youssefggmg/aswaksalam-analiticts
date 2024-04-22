@@ -59,6 +59,9 @@ footer{
     align-items: center;
     background-color: #dbdbdb;
 }
+.fa-solid{
+    cursor: pointer;
+}
 
 @media (max-width:600px) {
     
