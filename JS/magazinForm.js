@@ -1,7 +1,7 @@
 // select element 
 const nameMagazin = document.querySelector(".name")
 const ville = document.querySelector("#Ville")
-const quartier = document.querySelector("#Quartier")
+let quartier = document.querySelector("#Quartier")
 const date = document.querySelector(".date")
 const valid = document.querySelector(".btn")
  nameMagazin.addEventListener("change" , changeNameMagazin)
@@ -12,32 +12,35 @@ const valid = document.querySelector(".btn")
 //  values
  let nameOneMagazin="";
  let villeMagazin = ville.value;
- let quartierMagazin =quartier.value;
+
  let dateCreation="";
  let magazinArray = [];
-
+ let quartierMagazin=quartier.value;
 //  changing the Quartier with the change of the ville
 // this function was added by youssef
 ville.addEventListener("change",()=>{
   if(villeMagazin=="safi"){
+    
     quartier.innerHTML=`
     <option value="Azib Drai" >Azib Drai</option>
     <option value="Miftah Khier">Miftah Khier</option>
     <option value="Ijnnane">Ijnnane</option>`;
-    villeMagazin="Azib Drai";
+    quartierMagazin = quartier.value
   }
   else if(villeMagazin=="tanger"){
     quartier.innerHTML=`
     <option value="Mujahidine" >Mujahidine</option>
     <option value="Bni Makada">Bni Makada</option>
     <option value="Tanja Balia">Tanja Balia</option>`;
-    villeMagazin="Mujahidine";
+    quartierMagazin = quartier.value
+    
   }else if(villeMagazin=="casa"){
     quartier.innerHTML=`
     <option value="sidimarouf" >sidimarouf</option>
     <option value="ainshoq">ainshoq</option>
     <option value="lwalfa">lwalfa</option>`;
-    villeMagazin = "sidimarouf";
+    
+    
   }
   
 })
@@ -49,8 +52,13 @@ function changeNameMagazin (e){
 function changeVilleMagazin(e){
    villeMagazin = e.target.value
 }
+
+
+
+  
 function changeQuartieMagazin(e){
  quartierMagazin = e.target.value
+ console.log(quartierMagazin)
 }
 let toDaya = new Date()
 
@@ -66,7 +74,8 @@ let toDaya = new Date()
 
 valid.addEventListener("click" , valideMagazin)
 function valideMagazin(){
-  console.log(valideMagazin)
+   
+  console.log(quartierMagazin)
     let magazinObject = {
       name :nameOneMagazin,
       ville : villeMagazin,
