@@ -9,7 +9,7 @@ const row = document.querySelector(".row")
 
 const allMagaz = (x) =>{
   return x.map(item => `
-  <div class="col d-flex justify-content-center justify-content-md-start " )   } >
+  <div class="col d-flex justify-content-center justify-content-md-start col-lg-3 " )   } >
   <div class="card mb-4 allCardV " style="width: 18rem;" onClick = go("${item.name}")>
       <img class="card-img-top imageVeritical" src="../img/Aswak-Assalam-Emploi-Recrutement-Dreamjob.ma_.jpg" alt="Card image cap">
       <div class="card-body bodyCard">

@@ -42,11 +42,6 @@ ville.addEventListener("change",()=>{
   
 })
 
-
-
-
-
-
 // take the values the values from the inputs
 function changeNameMagazin (e){
   nameOneMagazin = e.target.value
@@ -57,10 +52,17 @@ function changeVilleMagazin(e){
 function changeQuartieMagazin(e){
  quartierMagazin = e.target.value
 }
+let toDaya = new Date()
+
+    let day = `${toDaya.getDate() < 10 ? "0":""}${toDaya.getDate()}`
+    let month = `${toDaya.getMonth()+1 < 10 ? "0":""}${toDaya.getMonth()+1}`
+    let years = toDaya.getFullYear()
+     toDaya = `${years}-${month}-${day}`
+    
+     date.setAttribute("max" , toDaya)
  function changeDateMagazin(e){
    dateCreation = e.target.value
- }
-
+  }
 
 valid.addEventListener("click" , valideMagazin)
 function valideMagazin(){
