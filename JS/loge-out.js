@@ -9,5 +9,5 @@ if (sessionStorage.getItem("conected")==null) {
 loge_out.addEventListener("click",(e)=>{
     window.location.href="loge in.html"
     // remove the token from the local storage
-    localStorage.removeItem("user")
+    sessionStorage.removeItem("conected")
 })

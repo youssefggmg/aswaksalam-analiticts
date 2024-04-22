@@ -6,7 +6,10 @@
     font-weight: 700;
     font-style: normal ;
 }
-
+html{
+    
+    
+}
 body {
     /* font-family: Arial, sans-serif; not the font we need */
     /* background-color: #ffffff; no use for this line  */
@@ -15,6 +18,8 @@ body {
     /* display: flex; this line is making the hole bage not working  */
     /* align-items: center;
     flex-direction: column; */
+    position: relative;
+    padding-bottom: 6em;
 }
 
 nav {
@@ -76,6 +81,10 @@ footer{
     justify-content: center;
     align-items: center;
     background-color: #dbdbdb;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
 }
 
 footer p {

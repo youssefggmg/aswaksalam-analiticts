@@ -19,13 +19,13 @@ body{
 .section{
 display: flex; justify-content: center;
 /* added by youssef */
-margin: 9em 0 2em 0;
+margin: 9em 0 2em;
 }
 .affichage{
 display: flex; 
 flex-direction: column; width: 65%;
   height: 570px;
-background-color: #dbdbdb;   border: 3px solid #504DC1;
+background-color: #95B6D9;   border: 3px solid #504DC1;
 }
 .barre{
     display: flex;
