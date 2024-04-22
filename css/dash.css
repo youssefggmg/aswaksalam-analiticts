@@ -1,15 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
-
-* {
-    font-family: "Montserrat", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 700;
-    font-style: normal ;
-    margin: 0;
-    padding: 0;
-    font-family: "Nunito Sans", sans-serif;
-}
-
+*{   margin: 0;  padding: 0; font-family: "Montserrat", sans-serif; } 
 h1{  font-weight: 700; font-size: 24px; } 
 h2{  font-weight: 500; font-size: 20px;} 
 h3{ font-weight: 500; font-size: 16px; }
@@ -20,10 +10,7 @@ body{
   overflow-x: hidden;
 }
 .section{
-display: flex; 
-justify-content: center;
-margin-top: 10em;
-margin-bottom: 10em;
+display: flex; justify-content: center;
 }
 .affichage{
 display: flex; 
@@ -206,4 +193,3 @@ th{
 .view,.modifier,.delete{
   cursor: pointer;
 }
-
